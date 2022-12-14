@@ -2,16 +2,14 @@ package com.example.demo.control;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/cpp")
@@ -67,21 +65,6 @@ public class cpp {
       connection.disconnect();
     }
     return JSONArray.parseArray(result.toString());
-
-//    String pretty = JSON.toJSONString(result.toString(), SerializerFeature.PrettyFormat, SerializerFeature.WriteMapNullValue,
-//        SerializerFeature.WriteDateUseDateFormat);
-//    return pretty;
-//        int i = 1;
-//        while (i==0){
-//
-//        }
-//        for (int i = 0; i < 9; i ++) {
-//            String command = "gh api repos/kubernetes-client/javascript/commits?state=all\"&\"page="+i+"\"&\"per_page=100 | Out-File -Append C:\\\\Users\\\\26227\\\\Desktop\\\\commitsjs11.json";
-//            PowerShell.executeSingleCommand(command);
-//        }
-//        Execute a command in PowerShell session
-
-    //Print results
 
   }
 

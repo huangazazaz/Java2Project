@@ -1,18 +1,18 @@
 package com.example.demo.control;
 
 import com.alibaba.fastjson.JSONArray;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
-@RequestMapping("/javascript")
+@RequestMapping("javascript")
 public class javascript {
   @RequestMapping("/issues")
   public JSONArray issues() throws IOException {
@@ -65,23 +65,8 @@ public class javascript {
       connection.disconnect();
     }
     return JSONArray.parseArray(result.toString());
-
-//    String pretty = JSON.toJSONString(result.toString(), SerializerFeature.PrettyFormat, SerializerFeature.WriteMapNullValue,
-//        SerializerFeature.WriteDateUseDateFormat);
-//    return pretty;
-//        int i = 1;
-//        while (i==0){
-//
-//        }
-//        for (int i = 0; i < 9; i ++) {
-//            String command = "gh api repos/kubernetes-client/javascript/commits?state=all\"&\"page="+i+"\"&\"per_page=100 | Out-File -Append C:\\\\Users\\\\26227\\\\Desktop\\\\commitsjs11.json";
-//            PowerShell.executeSingleCommand(command);
-//        }
-//        Execute a command in PowerShell session
-
-    //Print results
-
   }
+
   @RequestMapping("/commits")
   public JSONArray commits() throws IOException {
     String url1 = "https://api.github.com/repos/kubernetes-client/javascript/commits";
@@ -135,6 +120,7 @@ public class javascript {
     return JSONArray.parseArray(result.toString());
 
   }
+
   @RequestMapping("/contributors")
   public JSONArray contributors() throws IOException {
     String url1 = "https://api.github.com/repos/kubernetes-client/javascript/contributors";
@@ -189,6 +175,7 @@ public class javascript {
 
 
   }
+
   @RequestMapping("/releases")
   public JSONArray releases() throws IOException {
     String url1 = "https://api.github.com/repos/kubernetes-client/javascript/releases";
