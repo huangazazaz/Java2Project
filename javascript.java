@@ -215,6 +215,6 @@ public class javascript {
       connection.disconnect();
     }
     JSONArray array = JSONArray.parseArray(result.toString());
-    return String.valueOf(((JSONObject) array.get(0)).get("contributions"));
+    return "The most active developer's contributions is "+((JSONObject) array.get(0)).get("contributions");
   }
 }
